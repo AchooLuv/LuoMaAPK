@@ -92,6 +92,20 @@ a { color: inherit; }
 }
 .brand img { border-radius: 8px; }
 
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-link {
+  font-size: 13px;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color .18s;
+}
+.nav-link:hover { color: var(--theme); }
+
 .dl-mini {
   font-size: 13px;
   font-weight: 600;
@@ -440,6 +454,130 @@ a { color: inherit; }
   font-size: 12px;
   color: rgba(124, 150, 141, .7);
 }
+
+/* ==========================================================================
+   文档型页面（更新日志）
+   首页是整屏分页，这里改成正常文档流；顶部固定栏留出内边距。
+   本页没有任何 scroll-snap-align 元素，所以 html 上的吸附设置不会生效。
+   ========================================================================== */
+
+.page-body { background: var(--bg); }
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: calc(84px + env(safe-area-inset-top)) var(--pad)
+           max(48px, env(safe-area-inset-bottom));
+}
+
+.crumbs {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: 22px;
+}
+.crumbs a { color: var(--theme); text-decoration: none; }
+.crumbs a:hover { text-decoration: underline; }
+.crumbs span { margin: 0 7px; opacity: .5; }
+
+.page h1 {
+  margin: 0;
+  font-size: clamp(30px, 7vw, 42px);
+  font-weight: 800;
+  letter-spacing: .03em;
+  color: var(--text);
+}
+
+.page-lede {
+  margin: 14px 0 0;
+  font-size: clamp(14px, 3.6vw, 15.5px);
+  line-height: 1.85;
+  color: var(--text-light);
+}
+.page-lede a { color: var(--theme); text-decoration: none; }
+.page-lede a:hover { text-decoration: underline; }
+
+/* 每个版本一张卡片 */
+.release {
+  margin-top: 26px;
+  padding: 22px 22px 8px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(34, 227, 154, .16);
+  background: linear-gradient(180deg, rgba(14, 36, 29, .72), rgba(5, 19, 15, .72));
+}
+
+.release-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding-bottom: 14px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid rgba(124, 150, 141, .14);
+}
+
+.release-head h2 {
+  margin: 0;
+  font-size: clamp(21px, 5vw, 26px);
+  font-weight: 800;
+  letter-spacing: .02em;
+  color: var(--theme);
+}
+
+.release-head time {
+  font-size: 12.5px;
+  color: var(--text-light);
+  font-variant-numeric: tabular-nums;
+}
+
+.release h3 {
+  margin: 20px 0 0;
+  font-size: clamp(14.5px, 3.7vw, 16px);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.release h3::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 9px;
+  border-radius: 50%;
+  background: var(--theme);
+  box-shadow: 0 0 9px rgba(34, 227, 154, .8);
+  vertical-align: middle;
+}
+
+.release p {
+  margin: 9px 0 0;
+  font-size: clamp(13.5px, 3.5vw, 14.5px);
+  line-height: 1.85;
+  color: var(--text-light);
+}
+
+.release ul {
+  margin: 10px 0 0;
+  padding-left: 1.3em;
+  font-size: clamp(13.5px, 3.5vw, 14.5px);
+  line-height: 1.85;
+  color: var(--text-light);
+}
+.release li { padding: 2px 0; }
+.release li::marker { color: var(--theme); }
+
+.release-note {
+  margin-top: 14px !important;
+  color: var(--tip) !important;
+}
+
+.page-foot {
+  margin: 34px 0 0;
+  font-size: 13px;
+  color: var(--text-light);
+}
+.page-foot a { color: var(--theme); text-decoration: none; }
+.page-foot a:hover { text-decoration: underline; }
 
 /* ---------------------------------------------------------------- 响应式 */
 .br-wide { display: none; }

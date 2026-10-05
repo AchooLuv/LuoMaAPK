@@ -87,35 +87,26 @@ BT 下载速度完全取决于有多少人在做种。界面上会标记「死�
 
 ## 关于本仓库
 
-仓库根目录同时是功能展示页的源码 —— 纯静态站点，**无需构建**：
+仓库根目录同时是官方网站的源码（<https://luoma.muri.life/>）—— 纯静态站点，**无需构建**：
 
 ```
-index.html    页面结构与文案
-styles.css    样式（配色取自 APP 的 colorConfig.ts）
-app.js        分页导航 + 键盘方向键 + 拉取最新版本信息
-assets/       应用图标与分享图
-robots.txt    搜索引擎抓取规则
-sitemap.xml   站点地图
+index.html     功能展示页
+changelog.html 更新日志
+styles.css     样式（配色取自 APP 的 colorConfig.ts）
+app.js         分页导航 + 键盘方向键 + 拉取最新版本信息
+assets/        应用图标与分享图
+robots.txt     搜索引擎抓取规则
+sitemap.xml    站点地图
 ```
-
-本地预览：
-
-```bash
-python -m http.server 8000
-```
-
-### 部署到 Vercel
-
-1. 在 Vercel 里 **Add New → Project**，导入本仓库
-2. Framework Preset 选 **Other**（没有 `package.json`，Vercel 会按静态站点处理）
-3. Build Command 与 Output Directory **留空**，Root Directory 保持仓库根目录
-4. Deploy
-
-线上地址 <https://luoma.muri.life/>，域名在 Vercel 项目的 Domains 里配置。
 
 页面里的版本号、APK 文件名与大小由 `app.js` 在浏览器端调用 GitHub API
 （`/repos/AchooLuv/LuoMaAPK/releases/latest`）自动填充，**发新版本无需改代码**。
 接口不可用时会退回指向 Releases 页面的固定链接，页面照常可用。
+
+## 更新日志
+
+各版本的改动记录见 <https://luoma.muri.life/changelog.html>，
+或每个 Release 的说明。
 
 ## 说明
 
