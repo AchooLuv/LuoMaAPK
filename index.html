@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>骡马 LuoMa · 磁力链播放器</title>
+<meta name="description" content="骡马是一个基于 libtorrent4j 的磁力链播放器：粘贴磁力链或种子文件即可开始下载，支持多任务同时下载、边下边播与断点续传。" />
+<meta name="theme-color" content="#05130F" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="骡马 LuoMa · 磁力链播放器" />
+<meta property="og:description" content="边下边播，多任务并行。粘贴磁力链或种子文件即可开始。" />
+
+<link rel="icon" type="image/png" href="assets/logo.png" />
+<link rel="apple-touch-icon" href="assets/logo.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<a class="skip" href="#hero">跳到内容</a>
+
+<!-- 顶栏 -->
+<header class="topbar">
+  <a class="brand" href="#hero">
+    <img src="assets/logo.png" alt="" width="28" height="28" />
+    <span>骡马</span>
+  </a>
+  <a class="dl-mini" href="https://github.com/AchooLuv/LuoMaAPK/releases/latest"
+     data-download>下载 APK</a>
+</header>
+
+<!-- 右侧分页点 -->
+<nav class="dots" aria-label="分页导航">
+  <button type="button" data-goto="hero" aria-label="首页"></button>
+  <button type="button" data-goto="f1" aria-label="一键解析"></button>
+  <button type="button" data-goto="f2" aria-label="边下边播"></button>
+  <button type="button" data-goto="f3" aria-label="多任务并行"></button>
+  <button type="button" data-goto="download" aria-label="下载"></button>
+</nav>
+
+<main>
+
+  <!-- 首页 -->
+  <section class="slide slide--hero" id="hero">
+    <div class="glow glow--hero" aria-hidden="true"></div>
+    <div class="inner">
+      <img class="logo" src="assets/logo.png" alt="骡马" width="96" height="96" />
+      <h1>骡马</h1>
+      <p class="tagline">基于 libtorrent4j 的磁力链播放器</p>
+      <p class="lede">
+        粘贴磁力链或选择种子文件即可开始下载，<br class="br-wide" />
+        支持多个任务同时下载、边下边播与断点续传。
+      </p>
+      <div class="actions">
+        <a class="btn btn--primary" href="https://github.com/AchooLuv/LuoMaAPK/releases/latest"
+           data-download>下载 APK</a>
+        <button class="btn btn--ghost" type="button" data-goto="f1">了解功能</button>
+      </div>
+      <p class="meta" data-meta>仅 arm64-v8a · Android 9 及以上</p>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- 功能 1 -->
+  <section class="slide" id="f1">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="inner">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8v11a6 6 0 0 0 12 0V8" />
+          <path d="M18 8h-5v11a11 11 0 0 0 22 0V8h-5" />
+          <path d="M24 30v10" />
+          <path d="M17 40h14" />
+        </svg>
+      </div>
+      <p class="step">01</p>
+      <h2>一键解析</h2>
+      <p class="sub">粘贴磁力链或种子文件</p>
+      <ul class="points">
+        <li>磁力链直接粘贴，无需先下载种子文件</li>
+        <li>也可以直接从本地选择 <code>.torrent</code> 文件</li>
+        <li>多文件种子可单独选择要下载的那一个</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 功能 2 -->
+  <section class="slide" id="f2">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="inner">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"
+             stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="24" cy="24" r="16" />
+          <path d="M20 17.5l10 6.5-10 6.5z" fill="currentColor" stroke-linejoin="round" />
+        </svg>
+      </div>
+      <p class="step">02</p>
+      <h2>边下边播</h2>
+      <p class="sub">无需等待下载完成</p>
+      <ul class="points">
+        <li>本地 HTTP Range 服务 + ExoPlayer 直接播放</li>
+        <li>按播放位置动态调度分片优先级，先下正在看的部分</li>
+        <li>全屏横屏播放，系统返回键退出全屏</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 功能 3 -->
+  <section class="slide" id="f3">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="inner">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"
+             stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="22" height="16" rx="3" />
+          <rect x="17" y="20" width="22" height="16" rx="3" />
+          <path d="M24 29h10" />
+        </svg>
+      </div>
+      <p class="step">03</p>
+      <h2>多任务并行</h2>
+      <p class="sub">限速 · 优先级 · 断点续传</p>
+      <ul class="points">
+        <li>多个任务同时下载，可单独或批量暂停／继续</li>
+        <li>下载／上传限速，任务优先级分高／普通／低</li>
+        <li>每个任务独立保存进度，随时中断随时继续</li>
+        <li>历史记录按加入时间分组，可标记死种并一键清理</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 下载 -->
+  <section class="slide slide--download" id="download">
+    <div class="glow glow--download" aria-hidden="true"></div>
+    <div class="inner">
+      <h2>下载骡马</h2>
+      <p class="sub" data-version>最新版本</p>
+
+      <div class="card">
+        <div class="card-row">
+          <span class="k">文件</span>
+          <span class="v" data-asset>LuoMa-arm64-v8a.apk</span>
+        </div>
+        <div class="card-row">
+          <span class="k">大小</span>
+          <span class="v" data-size>—</span>
+        </div>
+        <div class="card-row">
+          <span class="k">架构</span>
+          <span class="v">仅 arm64-v8a</span>
+        </div>
+        <div class="card-row">
+          <span class="k">系统要求</span>
+          <span class="v">Android 9（API 28）及以上</span>
+        </div>
+        <div class="card-row">
+          <span class="k">签名</span>
+          <span class="v">正式密钥 CN=LuoMa</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn--primary" href="https://github.com/AchooLuv/LuoMaAPK/releases/latest"
+           data-download>下载 APK</a>
+        <a class="btn btn--ghost" href="https://github.com/AchooLuv/LuoMaAPK/releases"
+           target="_blank" rel="noopener">所有版本</a>
+      </div>
+
+      <ol class="install">
+        <li>下载 <code>.apk</code> 文件</li>
+        <li>系统会提示「未知来源应用」，允许安装</li>
+        <li>若装过其他密钥签名的旧版本，需先卸载</li>
+      </ol>
+
+      <p class="note">
+        下载内容保存在应用私有目录，<strong>卸载应用会一并删除</strong>。
+        校验值（MD5 / SHA256）写在每个 Release 的说明里。
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p class="tech">
+    底层 libtorrent-rasterbar · 下载引擎 libtorrent4j · 界面框架 ReactNative · 播放器 ExoPlayer
+  </p>
+  <p class="links">
+    <a href="https://github.com/AchooLuv" target="_blank" rel="noopener">GitHub</a>
+    <span>·</span>
+    <a href="https://my.muri.life/" target="_blank" rel="noopener">博客</a>
+    <span>·</span>
+    <a href="https://github.com/AchooLuv/LuoMaAPK" target="_blank" rel="noopener">发布仓库</a>
+  </p>
+  <p class="disclaimer">
+    请仅用于合法内容的分享与获取，下载与做种行为受当地法律法规约束。
+  </p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
