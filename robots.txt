@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# 站点只有首页一个文档，地图里就一条
+Sitemap: https://luoma.muri.life/sitemap.xml

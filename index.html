@@ -3,17 +3,73 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>骡马 LuoMa · 磁力链播放器</title>
-<meta name="description" content="骡马是一个基于 libtorrent4j 的磁力链播放器：粘贴磁力链或种子文件即可开始下载，支持多任务同时下载、边下边播与断点续传。" />
+<title>骡马 LuoMa · Android 磁力链播放器 | 边下边播 · 多任务并行</title>
+<meta name="description" content="骡马是一款 Android 磁力链播放器：粘贴磁力链接或选择种子文件即可开始下载，支持多任务同时下载、边下边播与断点续传。基于 libtorrent4j 与 ExoPlayer，仅支持 arm64-v8a，Android 9 及以上。" />
+<meta name="keywords" content="磁力链播放器,磁力链接,BT下载,种子文件,边下边播,断点续传,多任务下载,限速,Android,APK,libtorrent,ExoPlayer,magnet,torrent" />
+<meta name="author" content="AchooLuv" />
 <meta name="theme-color" content="#05130F" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
 
+<link rel="canonical" href="https://luoma.muri.life/" />
+
+<!-- Open Graph：分享到微信 / QQ / 论坛时的卡片 -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="骡马 LuoMa · 磁力链播放器" />
-<meta property="og:description" content="边下边播，多任务并行。粘贴磁力链或种子文件即可开始。" />
+<meta property="og:site_name" content="骡马 LuoMa" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:url" content="https://luoma.muri.life/" />
+<meta property="og:title" content="骡马 LuoMa · Android 磁力链播放器" />
+<meta property="og:description" content="粘贴磁力链接或选择种子文件即可开始下载，支持多任务同时下载、边下边播与断点续传。" />
+<meta property="og:image" content="https://luoma.muri.life/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="骡马 LuoMa · Android 磁力链播放器" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="骡马 LuoMa · Android 磁力链播放器" />
+<meta name="twitter:description" content="粘贴磁力链接或选择种子文件即可开始下载，支持多任务同时下载、边下边播与断点续传。" />
+<meta name="twitter:image" content="https://luoma.muri.life/assets/og.png" />
 
 <link rel="icon" type="image/png" href="assets/logo.png" />
 <link rel="apple-touch-icon" href="assets/logo.png" />
 <link rel="stylesheet" href="styles.css" />
+
+<!-- 结构化数据：让搜索引擎知道这是一个可下载的 Android 应用（而非普通网页） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "骡马 LuoMa",
+  "alternateName": "LuoMa",
+  "url": "https://luoma.muri.life/",
+  "applicationCategory": "MultimediaApplication",
+  "applicationSubCategory": "磁力链播放器 / BT 下载",
+  "operatingSystem": "Android 9 及以上",
+  "fileFormat": "application/vnd.android.package-archive",
+  "downloadUrl": "https://github.com/AchooLuv/LuoMaAPK/releases/latest",
+  "installUrl": "https://github.com/AchooLuv/LuoMaAPK/releases/latest",
+  "inLanguage": "zh-CN",
+  "isAccessibleForFree": true,
+  "description": "骡马是一款 Android 磁力链播放器：粘贴磁力链接或选择种子文件即可开始下载，支持多任务同时下载、边下边播与断点续传。基于 libtorrent4j 与 ExoPlayer。",
+  "featureList": [
+    "粘贴磁力链接或选择种子文件即可下载",
+    "多任务同时下载，可单独或批量暂停／继续",
+    "边下边播，无需等待下载完成",
+    "断点续传，重新打开继续上次进度",
+    "下载／上传限速与任务优先级"
+  ],
+  "softwareRequirements": "arm64-v8a 架构，Android 9（API 28）及以上",
+  "author": {
+    "@type": "Person",
+    "name": "AchooLuv",
+    "url": "https://github.com/AchooLuv"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CNY"
+  }
+}
+</script>
 </head>
 <body>
 
